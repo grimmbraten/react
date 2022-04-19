@@ -1,6 +1,6 @@
 {
   "name": "its-a-wrap",
-  "description": "",
+  "description": "It's an out of the box working React web application project, 'nuff' said",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.4",
+    "css-loader": "^6.7.1",
     "dotenv-webpack": "^7.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -23,6 +24,7 @@
     "eslint-plugin-react": "^7.25.1",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.3.2",
+    "style-loader": "^3.3.1",
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"
