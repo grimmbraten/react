@@ -1,3 +1,7 @@
+# files
 *.md
 *.json
+
+# directories
+build
 node_modules
