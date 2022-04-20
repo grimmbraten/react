@@ -1,5 +1,6 @@
 {
   "env": {
+    "jest": true,
     "node": true,
     "es2021": true,
     "browser": true
@@ -61,5 +62,6 @@
     ],
     "func-style": ["error", "expression", { "allowArrowFunctions": true }]
   },
+  "plugins": ["jest"],
   "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"]
 }

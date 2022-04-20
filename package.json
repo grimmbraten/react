@@ -1,6 +1,6 @@
 {
   "name": "its-a-wrap",
-  "description": "It's an out of the box working React web application project, 'nuff' said",
+  "description": "It's an out of the box Working React Application Project, 'nuff said",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,8 @@
     "build": "webpack --mode production --progress --color"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@loadable/component": "^5.15.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -25,9 +27,11 @@
     "dotenv-webpack": "^7.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^26.1.4",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
     "prettier": "^2.3.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.72.0",
