@@ -1,12 +1,18 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const LoadablePlugin = require('@loadable/webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 module.exports = {
   entry: './src/app/index.js',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'build')
+    filename: '[contenthash:8].js',
+    crossOriginLoading: 'anonymous',
+    path: path.resolve(__dirname, 'build/web'),
+    chunkFilename: 'static/[contenthash:8].chunk.js'
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -47,6 +53,17 @@ module.exports = {
   },
   plugins: [
     new Dotenv(),
+    new CleanWebpackPlugin(),
+    new SubresourceIntegrityPlugin(),
+    new LoadablePlugin({
+      writeToDisk: true,
+      filename: '../loadable-stats.json'
+    }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      analyzerMode: 'static',
+      reportFilename: '../bundle-report.html'
+    }),
     new HtmlWebpackPlugin({
       inject: 'body',
       filename: 'index.html',
