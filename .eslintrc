@@ -57,7 +57,7 @@
     "no-extra-parens": [
       "error",
       "all",
-      { "enforceForArrowConditionals": false, "ignoreJSX": "multi-line" }
+      { "enforceForArrowConditionals": true, "ignoreJSX": "all" }
     ],
     "func-style": ["error", "expression", { "allowArrowFunctions": true }]
   },

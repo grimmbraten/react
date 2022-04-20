@@ -52,5 +52,11 @@ module.exports = {
       filename: 'index.html',
       template: __dirname + '/src/public/index.html'
     })
-  ]
+  ],
+  devServer: {
+    hot: true,
+    port: 5000,
+    host: 'localhost',
+    historyApiFallback: true
+  }
 };
