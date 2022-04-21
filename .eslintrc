@@ -62,6 +62,11 @@
     ],
     "func-style": ["error", "expression", { "allowArrowFunctions": true }]
   },
-  "plugins": ["jest"],
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"]
+  "plugins": ["jest", "jest-dom"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:jest-dom/recommended"
+  ]
 }
