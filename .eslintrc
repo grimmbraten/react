@@ -60,7 +60,8 @@
       "all",
       { "enforceForArrowConditionals": true, "ignoreJSX": "all" }
     ],
-    "func-style": ["error", "expression", { "allowArrowFunctions": true }]
+    "func-style": ["error", "expression", { "allowArrowFunctions": true }],
+    "react/prop-types": "off"
   },
   "plugins": ["jest", "jest-dom"],
   "extends": [

@@ -1,8 +1,8 @@
 import React from 'react';
-import { getRuntimeConfig } from '~config';
+import { useEnvironment } from '~hooks/useEnvironment';
 
 const Boilerplate = () => {
-  const { greet } = getRuntimeConfig();
+  const { greet } = useEnvironment();
 
   return <div>Hello {greet}</div>;
 };
