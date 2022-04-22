@@ -48,6 +48,13 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][contenthash:8].[ext]'
+        }
       }
     ]
   },
