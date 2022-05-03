@@ -58,6 +58,12 @@
     "webpack-dev-server": "^4.8.1",
     "webpack-subresource-integrity": "^5.1.0"
   },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint",
+      "prettier --write"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app"
