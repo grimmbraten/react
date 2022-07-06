@@ -7,6 +7,7 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 module.exports = {
+  devtool: 'source-map',
   entry: './src/app/index.js',
   output: {
     filename: '[contenthash:8].js',
@@ -25,6 +26,7 @@ module.exports = {
       '~views': path.resolve(__dirname, 'src/app/views/'),
       '~contexts': path.resolve(__dirname, 'src/app/contexts/'),
       '~components': path.resolve(__dirname, 'src/app/components/'),
+      '~apollo': path.resolve(__dirname, 'src/app/apollo/'),
       '~queries': path.resolve(__dirname, 'src/app/apollo/queries/'),
       '~mutations': path.resolve(__dirname, 'src/app/apollo/mutations/')
     }
@@ -80,6 +82,7 @@ module.exports = {
   devServer: {
     hot: true,
     port: 5000,
+    compress: true,
     host: 'localhost',
     historyApiFallback: true
   }

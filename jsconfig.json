@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "~utils": ["src/utils/"],
+      "~public": ["src/public/"],
+      "~config": ["src/config/"],
+      "~routes": ["src/routes/"],
+      "~hooks": ["src/app/hooks/"],
+      "~views": ["src/app/views/"],
+      "~contexts": ["src/app/contexts/"],
+      "~components": ["src/app/components/"],
+      "~apollo": ["src/app/apollo/"],
+      "~queries": ["src/app/apollo/queries/"],
+      "~mutations": ["src/app/apollo/mutations/"]
+    }
+  }
+}
