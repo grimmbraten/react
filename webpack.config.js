@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -5,6 +6,17 @@ const LoadablePlugin = require('@loadable/webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
+
+const alias = {};
+const jsonConfig = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'jsconfig.json')).toString());
+
+if (jsonConfig?.compilerOptions?.paths) {
+  const aliases = Object.entries(jsonConfig.compilerOptions.paths);
+
+  aliases.forEach(([key, [value]]) => {
+    alias[key] = `${path.resolve(__dirname, value)}/`;
+  });
+}
 
 module.exports = {
   devtool: 'source-map',
@@ -16,20 +28,8 @@ module.exports = {
     chunkFilename: 'static/[contenthash:8].chunk.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    alias: {
-      '~utils': path.resolve(__dirname, 'src/utils/'),
-      '~public': path.resolve(__dirname, 'src/public/'),
-      '~config': path.resolve(__dirname, 'src/config/'),
-      '~routes': path.resolve(__dirname, 'src/routes/'),
-      '~hooks': path.resolve(__dirname, 'src/app/hooks/'),
-      '~views': path.resolve(__dirname, 'src/app/views/'),
-      '~contexts': path.resolve(__dirname, 'src/app/contexts/'),
-      '~components': path.resolve(__dirname, 'src/app/components/'),
-      '~apollo': path.resolve(__dirname, 'src/app/apollo/'),
-      '~queries': path.resolve(__dirname, 'src/app/apollo/queries/'),
-      '~mutations': path.resolve(__dirname, 'src/app/apollo/mutations/')
-    }
+    alias,
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [
