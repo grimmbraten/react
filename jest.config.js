@@ -7,12 +7,12 @@ module.exports = {
   setupFilesAfterEnv: ['./tests/setup.js'],
   coverageReporters: ['lcov', 'text-summary'],
   coveragePathIgnorePatterns: [
-    'node_modules',
     'build',
     'tests',
+    'src/routes',
     'src/config',
     'src/public',
-    'src/routes'
+    'node_modules'
   ],
   moduleNameMapper: {
     '~config': '<rootDir>/./src/config',
