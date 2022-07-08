@@ -22,8 +22,6 @@
   },
   "rules": {
     "dot-notation": "warn",
-    "default-case-last": "warn",
-    "default-param-last": "warn",
     "prefer-destructuring": ["warn", { "object": true, "array": false }],
     "no-var": "error",
     "eqeqeq": "error",
@@ -40,7 +38,9 @@
     "no-multi-spaces": "error",
     "no-self-compare": "error",
     "curly": ["error", "multi"],
+    "default-case-last": "error",
     "no-useless-return": "error",
+    "default-param-last": "error",
     "no-inline-comments": "error",
     "no-trailing-spaces": "error",
     "no-implicit-globals": "error",
