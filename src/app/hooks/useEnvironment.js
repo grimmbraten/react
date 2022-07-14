@@ -3,6 +3,6 @@ import EnvironmentContext from '~contexts/environment';
 
 export const useEnvironment = () => {
   const context = useContext(EnvironmentContext);
-  if (!context) throw new Error('useEnvironment must be used within an EnvironmentProvider');
+  if (!context) throw new Error('missing EnvironmentContext');
   return context;
 };
