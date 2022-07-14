@@ -1,14 +1,3 @@
 export const getRuntimeConfig = () => ({
-  /*
-  endpoints: [
-    example: {
-      uri: 'endpoint.com',
-      context: 'endpoint',
-      headers: {
-        key: 'name',
-        bearer: process.env.ENDPOINT_BEARER_TOKEN
-      },
-    }
-  ]
-  */
+  // The runtime config is a plain object where you can collect and expose all environment variables from your dotenv file
 });

@@ -1,24 +1,30 @@
-import { ApolloClient, HttpLink, InMemoryCache, split } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { getRuntimeConfig } from '~config';
 
 const generateApolloLink = () => {
   const config = getRuntimeConfig();
 
-  if (!config?.endpoints) {
-    console.warn('no endpoints found in env file');
-    return undefined;
-  }
+  return undefined;
 
-  return split(
-    operation => operation.getContext().dato === true,
+  /*
+    One GraphQL endpoint
+
     new HttpLink({
-      uri: 'endpointUri',
-      headers: {
-        Authorization: `Bearer ${config.endpoints[0].token}`
-      },
-      fetch: (uri, options) => fetch(uri.replace(/endpointUri/gi, config.endpoints[0].uri), options)
-    })
-  );
+      uri: "http://example.com/endpoint"
+    });
+
+    Two GraphQL endpoints
+
+    split(
+      operation => operation.getContext().CONTEXT_NAME === true,
+      new HttpLink({
+        uri: "http://example.com/endpoint1"
+      }),
+      new HttpLink({
+        uri: "http://example.com/endpoint2"
+      })
+    )
+  */
 };
 
 export const client = new ApolloClient({
