@@ -1,13 +1,13 @@
 {
-  "name": "its-a-wrap",
-  "description": "It's an out of the box Working React Application Project, 'nuff said",
+  "name": "react",
+  "description": "React boilerplate project",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
     "prepare": "husky install",
-    "dev": "webpack-dev-server --open --mode development",
+    "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production --progress --color"
   },
   "dependencies": {
@@ -49,7 +49,6 @@
     "eslint-plugin-jest-dom": "^4.0.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.1",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
     "jest": "^27.5.1",

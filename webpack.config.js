@@ -19,13 +19,13 @@ if (jsonConfig?.compilerOptions?.paths) {
 }
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   entry: './src/app/index.js',
   output: {
     filename: '[contenthash:8].js',
     crossOriginLoading: 'anonymous',
     path: path.resolve(__dirname, 'build/web'),
-    chunkFilename: 'static/[contenthash:8].chunk.js'
+    chunkFilename: 'chunks/[contenthash:8].js'
   },
   resolve: {
     alias,
@@ -50,18 +50,11 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[path][contenthash:8].[ext]'
-        }
       }
     ]
   },
   plugins: [
-    new Dotenv(),
+    new Dotenv({ safe: true, allowEmptyValues: true }),
     new CleanWebpackPlugin(),
     new SubresourceIntegrityPlugin(),
     new LoadablePlugin({
@@ -71,10 +64,10 @@ module.exports = {
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
       analyzerMode: 'static',
+      generateStatsFile: true,
       reportFilename: '../bundle-report.html'
     }),
     new HtmlWebpackPlugin({
-      inject: 'body',
       filename: 'index.html',
       template: __dirname + '/src/public/index.html'
     })
@@ -84,6 +77,24 @@ module.exports = {
     port: 5000,
     compress: true,
     host: 'localhost',
-    historyApiFallback: true
+    historyApiFallback: true,
+    devMiddleware: { writeToDisk: true }
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        mantine: {
+          chunks: 'all',
+          name: 'mantine',
+          test: /[\\/]node_modules[\\/]@mantine[\\/]/
+        },
+        apolloclient: {
+          chunks: 'all',
+          name: 'apollo-client',
+          test: /[\\/]node_modules[\\/]@apollo[\\/]client[\\/]/
+        }
+      }
+    }
   }
 };
