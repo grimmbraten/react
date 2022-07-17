@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Guard from '~components/Guard';
 import routes from '~routes';
+import NotFound from '~views/NotFound';
 
 const DynamicComponent = loadable(props => import(`~views/${props.view}`));
 
@@ -24,7 +25,7 @@ const Router = () => (
         }
       />
     ))}
-    <Route path="*" element={<>404</>} />
+    <Route path="*" element={<NotFound />} />
   </Routes>
 );
 

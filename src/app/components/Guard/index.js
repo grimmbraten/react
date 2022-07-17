@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '~hooks/useAuth';
+import AccessDenied from '~views/AccessDenied';
 
 const Guard = ({ redirect, children }) => {
   const { isAuthenticated } = useAuth();
@@ -10,7 +11,7 @@ const Guard = ({ redirect, children }) => {
   ) : redirect ? (
     <Navigate to={redirect} />
   ) : (
-    <>Access defined</>
+    <AccessDenied />
   );
 };
 
