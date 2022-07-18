@@ -7,8 +7,8 @@
     "test": "jest",
     "lint": "eslint .",
     "prepare": "husky install",
-    "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production --progress --color"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js --progress --color"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
@@ -49,6 +49,7 @@
     "eslint-plugin-jest-dom": "^4.0.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
     "jest": "^27.5.1",

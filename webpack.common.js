@@ -19,14 +19,7 @@ if (jsonConfig?.compilerOptions?.paths) {
 }
 
 module.exports = {
-  devtool: 'cheap-module-source-map',
   entry: './src/app/index.js',
-  output: {
-    filename: '[contenthash:8].js',
-    crossOriginLoading: 'anonymous',
-    path: path.resolve(__dirname, 'build/web'),
-    chunkFilename: 'chunks/[contenthash:8].js'
-  },
   resolve: {
     alias,
     extensions: ['.js', '.jsx']
@@ -50,6 +43,20 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(jpe?g|png|gif|webp|svg|otf|eot|ttf|woff2?)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              emitFile: true,
+              outputPath: 'assets',
+              publicPath: '/static/assets/',
+              name: 'assets/[name]-[contenthash:8].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -59,39 +66,31 @@ module.exports = {
     new SubresourceIntegrityPlugin(),
     new LoadablePlugin({
       writeToDisk: true,
-      filename: '../loadable-stats.json'
+      filename: './../reports/loadable-stats.json'
     }),
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
       analyzerMode: 'static',
       generateStatsFile: true,
-      reportFilename: '../bundle-report.html'
+      reportFilename: './../reports/cache-groups.html'
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: __dirname + '/src/public/index.html'
     })
   ],
-  devServer: {
-    hot: true,
-    port: 5000,
-    compress: true,
-    host: 'localhost',
-    historyApiFallback: true,
-    devMiddleware: { writeToDisk: true }
-  },
   optimization: {
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
         mantine: {
           chunks: 'all',
-          name: 'mantine',
+          name: 'cache/mantine',
           test: /[\\/]node_modules[\\/]@mantine[\\/]/
         },
         apolloclient: {
           chunks: 'all',
-          name: 'apollo-client',
+          name: 'cache/apollo-client',
           test: /[\\/]node_modules[\\/]@apollo[\\/]client[\\/]/
         }
       }
