@@ -55,11 +55,6 @@
     "no-unmodified-loop-condition": "error",
     "arrow-body-style": ["error", "as-needed"],
     "no-empty-function": ["error", { "allow": ["constructors"] }],
-    "no-extra-parens": [
-      "error",
-      "all",
-      { "enforceForArrowConditionals": true, "ignoreJSX": "all" }
-    ],
     "func-style": ["error", "expression", { "allowArrowFunctions": true }],
     "react/prop-types": "off"
   },
