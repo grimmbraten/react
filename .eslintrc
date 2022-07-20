@@ -63,7 +63,7 @@
     "func-style": ["error", "expression", { "allowArrowFunctions": true }],
     "react/prop-types": "off"
   },
-  "plugins": ["jest", "jest-dom"],
+  "plugins": ["jest", "jest-dom", "graphql"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",

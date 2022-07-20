@@ -22,12 +22,12 @@ module.exports = {
   entry: './src/app/index.js',
   resolve: {
     alias,
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.gql', '.graphql']
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/
       },
@@ -45,6 +45,12 @@ module.exports = {
         ]
       },
       {
+        exclude: /node_modules/,
+        test: /\.(graphql|gql)$/,
+        use: { loader: 'graphql-tag/loader' }
+      },
+      {
+        exclude: /node_modules/,
         test: /\.(jpe?g|png|gif|webp|svg|otf|eot|ttf|woff2?)$/,
         use: [
           {
@@ -61,9 +67,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new Dotenv({ safe: true, allowEmptyValues: true }),
     new CleanWebpackPlugin(),
     new SubresourceIntegrityPlugin(),
+    new Dotenv({ safe: true, allowEmptyValues: true }),
     new LoadablePlugin({
       writeToDisk: true,
       filename: './../reports/loadable-stats.json'
