@@ -3,6 +3,7 @@ module.exports = {
   verbose: true,
   testTimeout: 10000,
   collectCoverage: true,
+  passWithNoTests: true,
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['./tests/setup.js'],
   coverageReporters: ['lcov', 'text-summary'],
