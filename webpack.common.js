@@ -72,13 +72,13 @@ module.exports = {
     new Dotenv({ safe: true, allowEmptyValues: true }),
     new LoadablePlugin({
       writeToDisk: true,
-      filename: './../reports/loadable-stats.json'
+      filename: '../loadable-stats.json'
     }),
     new BundleAnalyzerPlugin({
       openAnalyzer: false,
       analyzerMode: 'static',
       generateStatsFile: true,
-      reportFilename: './../reports/cache-groups.html'
+      reportFilename: '../cache-groups.html'
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
