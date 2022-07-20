@@ -3,11 +3,11 @@ name: Source Quality Assurance
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   quality-assurance:
-    name: Running quality assurance
+    name: Running Source Quality Assurance
     runs-on: ubuntu-latest
 
     steps:
