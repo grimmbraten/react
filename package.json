@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "@loadable/component": "^5.15.2",
     "@mantine/core": "^4.2.2",
     "@mantine/dates": "^4.2.2",
