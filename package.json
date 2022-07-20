@@ -69,5 +69,11 @@
     "extends": [
       "react-app"
     ]
+  },
+  "resolutions": {
+    "terser": ">=5.14.2",
+    "node-fetch": ">=2.6.7",
+    "cross-fetch": ">=3.1.5",
+    "ws": ">=7.4.6"
   }
 }
