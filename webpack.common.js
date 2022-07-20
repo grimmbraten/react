@@ -89,10 +89,20 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
+        graphql: {
+          chunks: 'all',
+          name: 'cache/graphql',
+          test: /[\\/]node_modules[\\/]graphql[\\/]/
+        },
         mantine: {
           chunks: 'all',
           name: 'cache/mantine',
           test: /[\\/]node_modules[\\/]@mantine[\\/]/
+        },
+        reactDom: {
+          chunks: 'all',
+          name: 'cache/react-dom',
+          test: /[\\/]node_modules[\\/]react-dom[\\/]/
         },
         apolloclient: {
           chunks: 'all',
