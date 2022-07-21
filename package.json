@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "prepare": "husky install",
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js --progress --color"
+    "build": "webpack --config webpack.prod.js --progress --color --env eval",
+    "eval": "webpack --config webpack.dev.js --progress --color --env eval openAnalyzer"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",

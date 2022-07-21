@@ -1,8 +1,8 @@
 const path = require('path');
 const common = require('./webpack.common.js');
 
-module.exports = {
-  ...common,
+module.exports = env => ({
+  ...common(env),
   mode: 'development',
   devtool: 'eval-cheap-module-source-map',
   output: {
@@ -18,4 +18,4 @@ module.exports = {
     historyApiFallback: true,
     devMiddleware: { writeToDisk: true }
   }
-};
+});

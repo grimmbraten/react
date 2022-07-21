@@ -1,8 +1,8 @@
 const path = require('path');
 const common = require('./webpack.common.js');
 
-module.exports = {
-  ...common,
+module.exports = env => ({
+  ...common(env),
   devtool: false,
   mode: 'production',
   output: {
@@ -12,4 +12,4 @@ module.exports = {
     path: path.resolve(__dirname, 'build/web')
   },
   performance: { maxEntrypointSize: 800000, maxAssetSize: 256000, hints: 'warning' }
-};
+});

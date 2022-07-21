@@ -18,10 +18,7 @@ if (jsonConfig?.compilerOptions?.paths) {
   });
 }
 
-const includeStatistics =
-  !process.env.WEBPACK_SERVE || JSON.parse(process.env.npm_config_argv)?.original[1] === '--stats';
-
-module.exports = {
+module.exports = env => ({
   entry: './src/app/index.js',
   resolve: {
     alias,
@@ -73,14 +70,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new SubresourceIntegrityPlugin(),
     new Dotenv({ safe: true, allowEmptyValues: true }),
-    ...(includeStatistics
+    ...(env.eval
       ? [
           new LoadablePlugin({
             writeToDisk: true,
             filename: '../loadable-stats.json'
           }),
           new BundleAnalyzerPlugin({
-            openAnalyzer: false,
+            openAnalyzer: !!env.openAnalyzer,
             analyzerMode: 'static',
             generateStatsFile: true,
             reportFilename: '../cache-groups.html'
@@ -119,4 +116,4 @@ module.exports = {
       }
     }
   }
-};
+});
