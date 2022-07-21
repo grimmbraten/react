@@ -16,7 +16,7 @@ git clone git@github.com:grimmbraten/react.git
 yarn dev --open
 ```
 
-### Option 2: Website UI
+### Option 2: Github UI
 
 1. Click the "Use this template" button in the top right corner of the repository page.
 2. Fill in the requiered fields and then follow along option 1 from step 2.
