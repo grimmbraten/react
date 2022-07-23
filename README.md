@@ -19,4 +19,5 @@ yarn dev --open
 ### Option 2: Github UI
 
 1. Click the "Use this template" button in the top right corner of the repository page.
-2. Fill in the requiered fields and then follow along option 1 from step 2.
+2. Fill in the requiered fields and click "Create repository from template".
+3. Clone down your newly created repository to your local machine and then follow along option 1 from step 2.
