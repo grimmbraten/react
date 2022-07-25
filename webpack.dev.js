@@ -8,7 +8,7 @@ module.exports = env => ({
   output: {
     filename: '[name].js',
     crossOriginLoading: 'anonymous',
-    chunkFilename: 'chunks/[name].js',
+    chunkFilename: 'webpack/[name].js',
     path: path.resolve(__dirname, 'build/web')
   },
   devServer: {

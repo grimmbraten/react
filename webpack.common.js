@@ -77,10 +77,11 @@ module.exports = env => ({
             filename: '../loadable-stats.json'
           }),
           new BundleAnalyzerPlugin({
-            openAnalyzer: !!env.openAnalyzer,
             analyzerMode: 'static',
             generateStatsFile: true,
-            reportFilename: '../cache-groups.html'
+            openAnalyzer: !!env.openAnalyzer,
+            reportFilename: '../cache-groups.html',
+            reportTitle: `Cache group evaluation - ${new Date()}`
           })
         ]
       : []),

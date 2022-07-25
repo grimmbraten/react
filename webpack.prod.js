@@ -8,7 +8,7 @@ module.exports = env => ({
   output: {
     filename: '[contenthash:8].js',
     crossOriginLoading: 'anonymous',
-    chunkFilename: 'chunks/[contenthash:8].js',
+    chunkFilename: 'webpack/[contenthash:8].js',
     path: path.resolve(__dirname, 'build/web')
   },
   performance: { maxEntrypointSize: 800000, maxAssetSize: 256000, hints: 'warning' }
