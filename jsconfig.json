@@ -15,9 +15,10 @@
       "~routes": ["src/routes/"],
       "~hooks": ["src/app/hooks/"],
       "~views": ["src/app/views/"],
+      "~apollo": ["src/app/apollo/"],
+      "~assets": ["src/app/assets/"],
       "~contexts": ["src/app/contexts/"],
       "~components": ["src/app/components/"],
-      "~apollo": ["src/app/apollo/"],
       "~queries": ["src/app/apollo/queries/"],
       "~mutations": ["src/app/apollo/mutations/"]
     }
