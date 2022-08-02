@@ -1,7 +1,16 @@
-# files
 *.md
+*.txt
 *.json
+*.lock
+*.config.js
 
-# directories
+.eslintrc
+.gitignore
+.prettierrc
+
 build
+.husky
+.github
+coverage
 node_modules
+src/app/assets
