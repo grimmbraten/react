@@ -9,15 +9,15 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <BrowserRouter>
-        <AppContextProvider>
+    <AppContextProvider>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
           <ErrorBoundary>
             <App />
           </ErrorBoundary>
-        </AppContextProvider>
-      </BrowserRouter>
-    </ApolloProvider>
+        </BrowserRouter>
+      </ApolloProvider>
+    </AppContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
