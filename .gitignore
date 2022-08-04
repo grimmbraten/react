@@ -1,18 +1,8 @@
-# dependencies
-node_modules
-
-# visual studio code
-.vscode
-
-# testing
-coverage
-
-# production
-build
-
-# misc
 .env
+*.log
+.vscode
 .DS_Store
 
-# logs
-*.log
+build
+coverage
+node_modules
