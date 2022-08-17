@@ -9,7 +9,8 @@
     "prepare": "husky install",
     "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js --progress --color --env eval",
-    "eval": "webpack --config webpack.dev.js --progress --color --env eval openAnalyzer"
+    "eval": "webpack --config webpack.dev.js --progress --color --env eval openAnalyzer",
+    "sqa": "yarn build && yarn lint && yarn test"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
