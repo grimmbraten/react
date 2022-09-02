@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "prepare": "husky install",
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js --progress --color --env eval",
+    "build": "webpack --config webpack.prod.js --progress --color --env hash",
     "eval": "webpack --config webpack.dev.js --progress --color --env eval openAnalyzer",
     "sqa": "yarn build && yarn lint && yarn test"
   },
