@@ -18,6 +18,7 @@ export default [
     exact: true,
     view: 'Home',
     guarded: false,
-    redirect: false
+    redirect: false,
+    title: 'Login'
   }
 ];
